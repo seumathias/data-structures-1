@@ -181,7 +181,7 @@ void listaChamada(Aluno alunos[], Disciplina disciplinas[], int aluno, int disc)
 		printf("%d - %s", i+1, listaNomes[i]);
 		}
 }
-int consultaAluno(Aluno alunos[], int aluno){
+void historicoAluno(Aluno alunos[], Disciplina disciplinas[], int aluno, int disc){
 	printf("Qual o nome do aluno? ");
 	char busca[100];
 	int alunoAlvo;
@@ -190,15 +190,11 @@ int consultaAluno(Aluno alunos[], int aluno){
 		alunoAlvo = buscarAluno(alunos, busca, aluno);
 		if(alunoAlvo < 0){
 			printf("Aluno não localizado\n");
-			return 0;
+			break;
 		}
 			else if(alunoAlvo >= 0)
-				return alunoAlvo;
+				break;
 		}while(1);
-	}
-
-void historicoAluno(Aluno alunos[], Disciplina disciplinas[], int aluno, int disc){
-	int alunoAlvo = consultaAluno(alunos, aluno);
 	int listaDisc[50];
 	int qtde = 0;
 	for(int i = 0; i < disc; i++){
