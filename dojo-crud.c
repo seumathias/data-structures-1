@@ -163,8 +163,8 @@ int main(){
             default: printf("Inválido\n");
         }
     }
-    fclose(storage);
+    int i = fclose(storage);
+    if(!i)
+        printf("Arquivo fechado.");
     return 0;
 }
-
-Fiz aqui, tá funcionando?
